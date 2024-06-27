@@ -3,7 +3,7 @@ import requests
 import csv
 from io import StringIO
 import pandas
-from pandas.io.json import json_normalize
+from pandas.io.json import _normalize
 import urllib3
 from pyiptmnet.enums import API_VERSION
 
@@ -25,7 +25,7 @@ def _to_dataframe(text):
     return dataframe
 
 def _to_dataframe_from_json(json):
-    dataframe = json_normalize(json)
+    dataframe = _normalize(json)
     return dataframe
 
 def search(search_term, term_type, role, ptm_list=None, organism_list=None, dict=None):
