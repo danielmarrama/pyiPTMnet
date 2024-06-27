@@ -61,7 +61,7 @@ def search(search_term, term_type, role, ptm_list=None, organism_list=None, dict
 
     result = requests.get(url, params=data, verify=False, headers=headers)
 
-    if result.status_code is 200:
+    if result.status_code == 200:
         # read the result
         if dict is True:
             search_results = json.loads(result.text)
@@ -78,7 +78,7 @@ def get_info(id, dict=None):
     url = f"{base_url}/{id}/info"
     result = requests.get(url, verify=False)
 
-    if result.status_code is 200:
+    if result.status_code == 200:
         # read the result
         info = json.loads(result.text)
         return info
@@ -97,7 +97,7 @@ def get_msa(id,dict=None):
 
     result = requests.get(url, verify=False, headers=headers)
 
-    if result.status_code is 200:
+    if result.status_code == 200:
         # read the result
         if dict is True:
             data = json.loads(result.text)
@@ -120,7 +120,7 @@ def get_substrates(id, dict=None):
 
     result = requests.get(url, verify=False, headers=headers)
 
-    if result.status_code is 200:
+    if result.status_code == 200:
         # read the result
         if dict is True:
             data = json.loads(result.text)
@@ -143,7 +143,7 @@ def get_proteoforms(id, dict=None):
 
     result = requests.get(url, verify=False, headers=headers)
 
-    if result.status_code is 200:
+    if result.status_code == 200:
         # read the result
         if dict is True:
             data = json.loads(result.text)
@@ -166,7 +166,7 @@ def get_ptm_dependent_ppi(id, dict=None):
 
     result = requests.get(url, verify=False, headers=headers)
 
-    if result.status_code is 200:
+    if result.status_code == 200:
         # read the result
         if dict is True:
             data = json.loads(result.text)
@@ -188,7 +188,7 @@ def get_ppi_for_proteoforms(id, dict=None):
 
     result = requests.get(url, verify=False, headers=headers)
 
-    if result.status_code is 200:
+    if result.status_code == 200:
         # read the result
         if dict is True:
             data = json.loads(result.text)
@@ -218,7 +218,7 @@ def get_ptm_enzymes_from_list(items,dict=None):
 
     result = requests.post(url, data=json_data, verify=False,headers=headers)
 
-    if result.status_code is 200:
+    if result.status_code == 200:
         # read the result
         if dict is True:
             data = json.loads(result.text)
@@ -247,7 +247,7 @@ def get_ptm_ppi_from_list(items,dict=None):
 
     result = requests.post(url, data=json_data, verify=False,headers=headers)
 
-    if result.status_code is 200:
+    if result.status_code == 200:
         # read the result
         if dict is True:
             data = json.loads(result.text)
@@ -269,7 +269,7 @@ def get_variants(id, dict=None):
 
     result = requests.get(url, verify=False, headers=headers)
 
-    if result.status_code is 200:
+    if result.status_code == 200:
         # read the result
         if dict is True:
             data = json.loads(result.text)
